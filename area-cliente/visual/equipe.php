@@ -45,7 +45,7 @@ $favoritos = FavoritoDao::selectAll();
         include(__DIR__ . '../../componentes/navbarblack.php');
     }
     ?>
-
+<!-- sasas -->
     <div class="card_wrapper">
         <div class="container">
             <?php foreach ($posicoes as $titulo => $jogadores) { ?>
