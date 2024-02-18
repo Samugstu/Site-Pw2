@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "eFootball";
+  src: local("../../fonts/eFootball Stencil Regular"),
+    local("../../fonts/eFootball-Stencil-Regular"),
+    url("../../fonts/eFootballStencil-Regular.woff2") format("woff2"),
+    url("../../fonts/eFootballStencil-Regular.woff") format("woff"),
+    url("../../fonts/eFootballStencil-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "eFootballa";
+  src: local("../../fonts/eFootball Sans Bold"),
+    local("../../fonts/eFootball-Sans-Bold"),
+    url("../../fonts/eFootballSans-Bold.woff2") format("woff2"),
+    url("../../fonts/eFootballSans-Bold.woff") format("woff"),
+    url("../../fonts/eFootballSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.slider_carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.slider_carousel .owl-prev,
+.slider_carousel .owl-next {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.slider_carousel .owl-next {
+  right: -50px;
+}
+
+.slider_carousel .owl-prev {
+  left: -50px;
+}
+
+body {
+  background-image: url("../../imgs/morumbi.jpg") !important;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h2 {
+  color: white;
+  font-family: "eFootballa";
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.card-player {
+  width: 250px;
+  height: 350px !important;
+  flex-shrink: 0;
+  margin-top: 10px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.atac {
+  background-image: url("../../imgs/fundoAtaca.jpg") !important;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.mei {
+  background-image: url("../../imgs/fundoMei.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.zag {
+  background-image: url("../../imgs/fundoZag.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.gol {
+  background-image: url("../../imgs/fundoGol.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Adicione a seguinte regra para ajustar o tamanho dos cards na tela responsiva */
+@media (max-width: 768px) {
+  .card-player {
+    width: 100%;
+    /* Altera para 100% da largura da tela */
+    max-width: 250px;
+    /* Define a largura máxima dos cards */
+  }
+}
+
+.dados {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.logo1 {
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+  margin-top: 10px;
+  filter: drop-shadow(0 0 0.75rem black);
+}
+
+.num {
+  font-family: "eFootball" !important;
+  color: white;
+  font-size: 60px;
+  filter: drop-shadow(0 0 0.75rem black);
+}
+
+.pos {
+  font-family: "eFootballa" !important;
+  color: white;
+  text-transform: uppercase;
+  font-size: 45px;
+  filter: drop-shadow(0 0 0.75rem black);
+}
+
+.nom {
+  font-family: "eFootballa" !important;
+}
+
+.nome {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  filter: drop-shadow(0 0 0.75rem black);
+  color: white;
+}
+
+.card-player:hover {
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.05);
+  transform: translateY(-10px);
+  transition: 0.8s;
+}
+
+.img-player {
+  align-self: flex-end;
+}
+
+.img-player img {
+  height: 350px;
+  object-fit: cover;
+}
+
+.owl-item {
+  display: flex;
+  justify-content: center !important;
+}
+
+.atac::before,
+.atac::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(1deg, #6f0101, #9f0505, #da0000, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+.mei::before,
+.mei::after,
+.gol::before,
+.gol::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #da0000,
+    #ff0000,
+    #000000,
+    #ffffff,
+    #000000,
+    #da0000
+  );
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+.zag::before,
+.zag::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(
+    45deg,
+    #000000,
+    #ffffff,
+    #000000,
+    #000000,
+    #ffffff,
+    #000000,
+    #000000,
+    #ffffff,
+    #000000
+  );
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.card-player::after {
+  filter: blur(10px);
+}
+
+.owl-nav.disabled {
+  display: block !important;
+}
+
+#spfcL {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 35px;
+  filter: drop-shadow(0 0 0.75rem black);
+}
+
+.la{
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
